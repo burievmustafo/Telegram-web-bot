@@ -1,20 +1,26 @@
 import "./card.css";
 import Button from "../button/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Card = (props) => {
-
+    const navigate = useNavigate();
     const [count, setCount] = useState(0)
     const{course, onAddItem, onRemoveItem} = props;
-    const handleInrement = () => {
+    
+    const handleInrement = (e) => {
+        e.stopPropagation();
         setCount(prev => prev + 1)
         onAddItem(course)
     }
-    const handleDecrement = () => {
-        
+    const handleDecrement = (e) => {
+        e.stopPropagation();
         setCount(prev => prev - 1)
         onRemoveItem(course)
-        
+    }
+
+    const handleCardClick = () => {
+        navigate(`/course/${course.id}`);
     }
 
     const formatPrice = (price) => {
@@ -22,7 +28,7 @@ const Card = (props) => {
     }
 
     return (
-        <div className="card">
+        <div className="card" onClick={handleCardClick}>
             <span className={`${count !== 0 ? 'card__badge' : "card__badge--hidden"}`}>{count}</span>
 
             <div className="image__container">

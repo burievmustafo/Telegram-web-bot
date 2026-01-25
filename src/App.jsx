@@ -1,8 +1,10 @@
 
 import { useCallback, useEffect, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css'
-import Card from './components/card/card'
 import Cart from './components/cart/cart'
+import Home from './pages/Home/Home'
+import CourseDetails from './pages/CourseDetails/CourseDetails'
 import {getData} from './constants/db'
 const courses = getData();
 
@@ -12,6 +14,7 @@ const telegram = window.Telegram.WebApp;
 
 const App = () => {
   const [cartItems, setcartItems] = useState([])
+  const location = useLocation();
 
   useEffect(() => {
     telegram.ready();
@@ -81,19 +84,33 @@ const App = () => {
 
   return (
     <>
-    <header className="header">
-      <div className="header__logo">🐼</div>
-      <h1 className="header__title">edu<span>Panda</span></h1>
-      <p className="header__subtitle">Yapon tilini qiziqarli o'rganing</p>
-    </header>
-    
-    <Cart cartItems={cartItems} onCheckout={onCheckout} />
+    {/* Faqat bosh sahifada Cart ko'rsatish */}
+    {location.pathname === '/' && (
+      <Cart cartItems={cartItems} onCheckout={onCheckout} />
+    )}
 
-    <div className="cards__container">
-      {courses.map(course => (
-        <Card key={course.id} course={course} onAddItem={onAddItem} onRemoveItem={onRemoveItem} />
-      ))}
-    </div>
+    <Routes>
+      <Route 
+        path="/" 
+        element={
+          <Home 
+            courses={courses} 
+            onAddItem={onAddItem} 
+            onRemoveItem={onRemoveItem} 
+          />
+        } 
+      />
+      <Route 
+        path="/course/:id" 
+        element={
+          <CourseDetails 
+            courses={courses} 
+            onAddItem={onAddItem}
+            cartItems={cartItems}
+          />
+        } 
+      />
+    </Routes>
     </>
   );
 }
