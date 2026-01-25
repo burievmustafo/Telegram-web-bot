@@ -1,60 +1,70 @@
 export function getData() {
   return [
     {
-      title: 'JavaScript',
-      price: 17.99,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F3gf746AKRbWNJ8BOCoEB&w=3840&q=75',
       id: 1,
+      title: 'Hiragana asoslari',
+      description: 'Yapon alifbosini noldan o\'rganing',
+      price: 49000,
+      level: 'Boshlang\'ich',
+      duration: '8 soat',
+      lessons: 24,
+      emoji: 'あ',
+      image: 'https://images.unsplash.com/photo-1528164344705-47542687000d?w=400&h=250&fit=crop',
     },
     {
-      title: 'ReactJS',
-      price: 15,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F65rcPxSLT9ysJDisXF80&w=3840&q=75',
       id: 2,
+      title: 'Katakana kursi',
+      description: 'Katakana yozuvini o\'zlashtiring',
+      price: 49000,
+      level: 'Boshlang\'ich',
+      duration: '6 soat',
+      lessons: 20,
+      emoji: 'カ',
+      image: 'https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&h=250&fit=crop',
     },
     {
-      title: 'VueJS',
-      price: 13.5,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F54vRODSTGoFuZBVKfWWQ&w=3840&q=75',
       id: 3,
+      title: 'JLPT N5 tayyorlov',
+      description: 'N5 imtihoniga tayyorlaning',
+      price: 149000,
+      level: 'Boshlang\'ich',
+      duration: '25 soat',
+      lessons: 60,
+      emoji: '📚',
+      image: 'https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=400&h=250&fit=crop',
     },
     {
-      title: 'NodeJS',
-      price: 12.99,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2F3O8LhZ1R7e9H8W3U4Qy1&w=3840&q=75',
       id: 4,
+      title: 'JLPT N4 tayyorlov',
+      description: 'N4 darajasiga ko\'taring',
+      price: 199000,
+      level: 'O\'rta',
+      duration: '35 soat',
+      lessons: 80,
+      emoji: '📖',
+      image: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=400&h=250&fit=crop',
     },
     {
-      title: 'NestJS',
-      price: 12.5,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FxN7aKKLMQUuD72ikvC1H&w=3840&q=75',
       id: 5,
+      title: 'Kanji 500',
+      description: '500 ta asosiy kanji ierogliflar',
+      price: 249000,
+      level: 'O\'rta',
+      duration: '40 soat',
+      lessons: 100,
+      emoji: '漢',
+      image: 'https://images.unsplash.com/photo-1492571350019-22de08371fd3?w=400&h=250&fit=crop',
     },
     {
-      title: 'NextJS',
-      price: 12.99,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FPe94ubZPSCHgXDIPBxTr&w=3840&q=75',
       id: 6,
-    },
-    {
-      title: 'TypeScript',
-      price: 22.99,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FfZ3pLnBeRQ2hJtZNbhNE&w=3840&q=75',
-      id: 7,
-    },
-    {
-      title: 'TensorflowJS',
-      price: 28.99,
-      Image:
-        'https://sammi.ac/_next/image?url=https%3A%2F%2Fmedia.graphassets.com%2FTlMgibhgQveiDeJeXDPI&w=3840&q=75',
-      id: 8,
+      title: 'Yapon madaniyati',
+      description: 'Madaniyat va an\'analar',
+      price: 79000,
+      level: 'Barcha',
+      duration: '12 soat',
+      lessons: 30,
+      emoji: '🏯',
+      image: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=250&fit=crop',
     },
   ];
 }

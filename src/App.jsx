@@ -81,16 +81,19 @@ const App = () => {
 
   return (
     <>
-    <h1 className='heading'>Sammi kurslar</h1>
+    <header className="header">
+      <div className="header__logo">🐼</div>
+      <h1 className="header__title">edu<span>Panda</span></h1>
+      <p className="header__subtitle">Yapon tilini qiziqarli o'rganing</p>
+    </header>
+    
     <Cart cartItems={cartItems} onCheckout={onCheckout} />
 
     <div className="cards__container">
       {courses.map(course => (
         <Card key={course.id} course={course} onAddItem={onAddItem} onRemoveItem={onRemoveItem} />
       ))}
-
     </div>
-    
     </>
   );
 }
